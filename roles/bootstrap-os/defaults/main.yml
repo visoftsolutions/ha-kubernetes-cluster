@@ -16,6 +16,7 @@ fedora_coreos_packages:
   - python3-libselinux
   - ethtool                 # required in kubeadm preflight phase for verifying the environment
   - ipset                   # required in kubeadm preflight phase for verifying the environment
+  - iproute-tc
   - conntrack-tools         # required by kube-proxy
 
 ## General
