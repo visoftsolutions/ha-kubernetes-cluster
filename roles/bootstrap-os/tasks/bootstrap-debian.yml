@@ -74,3 +74,23 @@
     state: present
     use: apt
   become: true
+
+- name: Ensure ufw is installed (Debian/Ubuntu)
+  package:
+    name: ufw
+    state: present
+
+- name: Allow ports in ufw (Debian/Ubuntu)
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    proto: tcp
+  loop:
+    - 80
+    - 443
+    - 6443
+    - 2379
+    - 2380
+    - 10250
+    - 10259
+    - 10257

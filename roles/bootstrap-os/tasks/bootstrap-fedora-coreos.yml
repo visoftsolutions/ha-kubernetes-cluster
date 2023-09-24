@@ -44,3 +44,30 @@
     is_fedora_coreos: True
   tags:
     - facts
+
+- name: Ensure firewalld is installed (RedHat/CentOS)
+  package:
+    name: firewalld
+    state: present
+
+- name: Start and enable firewalld (RedHat/CentOS)
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: Allow ports in firewalld (RedHat/CentOS)
+  firewalld:
+    port: "{{ item }}"
+    state: enabled
+    immediate: yes
+    permanent: true
+  loop:
+    - 80/tcp
+    - 443/tcp
+    - 6443/tcp
+    - 2379/tcp
+    - 2380/tcp
+    - 10250/tcp
+    - 10259/tcp
+    - 10257/tcp
