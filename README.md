@@ -16,7 +16,7 @@ ansible-playbook -i ./inventory/visoftsolutions/inventory.ini  --become reset.ym
 
 #### Configuration
 
-In order to modify cluster profision setup go to:
+In order to modify cluster provision setup go to:
 ```sh
 cd ./inventory/visoftsolutions/
 
