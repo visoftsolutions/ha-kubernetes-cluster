@@ -4,6 +4,12 @@
 
 ### Ansible
 
+#### Python dependencies
+```sh
+pip install netaddr
+pip install jmespath
+```
+
 #### Usage
 
 ```sh
