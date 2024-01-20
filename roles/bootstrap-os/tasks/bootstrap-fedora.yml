@@ -34,3 +34,9 @@
     name: libselinux-python3
     state: present
   become: true
+
+- name: Ensure firewalld is stopped and disabled
+  systemd:
+    name: firewalld
+    enabled: no
+    state: stopped

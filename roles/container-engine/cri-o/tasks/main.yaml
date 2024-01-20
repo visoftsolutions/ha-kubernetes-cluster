@@ -1,4 +1,16 @@
 ---
+- name: Cri-o dependencies runc
+  include_role:
+    name: container-engine/runc
+
+- name: Cri-o dependencies crictl
+  include_role:
+    name: container-engine/crictl
+
+- name: Cri-o dependencies skopeo
+  include_role:
+    name: container-engine/skopeo
+
 - name: Cri-o | check if fedora coreos
   stat:
     path: /run/ostree-booted

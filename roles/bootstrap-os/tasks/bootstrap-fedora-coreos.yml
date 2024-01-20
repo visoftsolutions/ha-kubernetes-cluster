@@ -44,3 +44,9 @@
     is_fedora_coreos: True
   tags:
     - facts
+
+- name: Ensure firewalld is stopped and disabled
+  systemd:
+    name: firewalld
+    enabled: no
+    state: stopped
